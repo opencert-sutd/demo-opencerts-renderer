@@ -6,11 +6,11 @@
 // TODO: Use dynamic loading to prevent all templates to be loaded at once.
 import DefaultTemplate from "./default";
 import CustomTemplate from "./customTemplate";
-import GovTechDemoCert from "./govtechDemoCert";
+import SUTDTemplate from "./SUTDTemplate";
 
 export default {
   default: DefaultTemplate,
   CUSTOM_TEMPLATE: CustomTemplate,
-  GOVTECH_DEMO: GovTechDemoCert,
+  SUTD_TEMPLATE: SUTDTemplate,
   NULL: []
 };
