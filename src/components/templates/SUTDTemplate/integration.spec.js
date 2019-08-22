@@ -16,8 +16,8 @@ const validateTextContent = async (t, component, texts) =>
 
 test("SUTD Demo certificate is rendered correctly", async t => {
   // Inject javascript and execute window.openAttestation.renderDocument
-  const certificateContent = getData(
-    JSON.parse(readFileSync(join(__dirname, Certificate)).toString())
+  const certificateContent = JSON.parse(
+    readFileSync(join(__dirname, Certificate)).toString()
   );
   await t.eval(
     () => window.openAttestation.renderDocument(certificateContent),
