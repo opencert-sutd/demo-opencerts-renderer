@@ -52,16 +52,20 @@
       window.connection.promise.then(frame => frame.renderDocument(cert));
     };
     const certificate = {
-      id: "53b75bbe",
-      description: "Govtech Demo Certificate",
-      issuedOn: "2019-05-29T00:00:00+08:00",
-      $template: {
-        name: "GOVTECH_DEMO",
-        type: "GOVTECH_DEMO",
-        url: "https://demo-cnm.openattestation.com"
+"id": "1260",
+  "$template": {
+        "name": "SUTD_TEMPLATE", 
+        "type": "EMBEDDED_RENDERER",
+		"url" : "https://opencert.sutd.edu.sg/"
       },
-      admissionDate: "2017-08-01T00:00:00+08:00",
-      graduationDate: "2022-08-01T00:00:00+08:00",
+  "name": "Bachelor of Science",
+  "issuedOn": "2015-08-29T00:00:00+00:00",
+ "issuers": [
+    {
+		"name": "Singapore University of Technology and Design",
+        "certificateStore": "0x96a7bEefb0A7fb6B9d2101B0A27a734fA97E7221"
+    }
+],
       issuers: [
         {
           name: "Govtech",
