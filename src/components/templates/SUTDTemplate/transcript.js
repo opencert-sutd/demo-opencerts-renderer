@@ -2,6 +2,8 @@ import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { get } from "lodash";
 import _ from "lodash";
+import SimplePrivacyFilterBanner from "../../TemplateCommon/Privacy/SimplePrivacyFilterBanner";
+import ObfuscatableValue from "../../TemplateCommon/Privacy/ObfuscatableValue";
 import {  SUTD_CERT_LOGO,
   SUTD_SEAL,
   SUTD_FOOTER_1,
@@ -513,7 +515,8 @@ const Transcript = ({ document }) => (
 );
 
 Transcript.propTypes = {
-  document: PropTypes.object.isRequired
+  document: PropTypes.object.isRequired,
+  handleObfuscation: PropTypes.func
 };
 
 export default Transcript;
