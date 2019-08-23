@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { format } from "date-fns";
+import { tz } from "moment-timezone";
 import { get } from "lodash";
 import {
   SUTD_CERT_BG,
@@ -10,6 +11,12 @@ import {
 } from "./images";
 
 export const TIMEZONE = "Asia/Singapore";
+
+export const formatDateFullMonthProper = dateString => {
+  if (!dateString) return null;
+  const date = new Date(dateString);
+  return tz(date, TIMEZONE).format("D MMMM YYYY");
+};
 
 const GothamMedium22pt = {
   fontFamily: "Gotham Medium",
@@ -161,7 +168,7 @@ const Template = ({ document }) => (
       </div>
       <div className="row d-flex justify-content-center">
         <span style={GothamBold12pt}>
-          {format(document.issuedOn, "DD Month YYYY")}
+          {formatDateFullMonthProper(document.issuedOn)}
         </span>
       </div>
     </div>
