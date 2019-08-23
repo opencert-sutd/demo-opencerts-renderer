@@ -1,16 +1,22 @@
-import SUTDCert from "./certificate";
-import SUTDTranscript from "./transcript";
+import DemoCert from "./certificate";
+import DemoTranscript from "./transcript";
+import DemoMedia from "./media";
 
 const templates = [
   {
     id: "certificate",
     label: "Certificate",
-    template: SUTDCert
+    template: DemoCert
   },
   {
     id: "transcript",
     label: "Transcript",
-    template: SUTDTranscript
+    template: DemoTranscript
+  },
+  {
+    id: "media",
+    label: "Media",
+    template: DemoMedia
   }
 ];
 
