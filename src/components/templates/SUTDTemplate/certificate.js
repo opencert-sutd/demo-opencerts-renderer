@@ -216,6 +216,5 @@ const Template = ({ document }) => (
 
 export default Template;
 Template.propTypes = {
-  document: PropTypes.object.isRequired,
-  updateParentHeight: PropTypes.func
+  document: PropTypes.object.isRequired
 };
