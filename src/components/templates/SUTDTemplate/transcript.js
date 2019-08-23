@@ -224,7 +224,7 @@ export const DegreeFooter =({ document }) => {
 
 		<div className="row">
 			<div className="col-5">
-				<span style={Arial15pt}>On: {format(document.issuedOn, "DD Month YYYY")}</span>
+				<span style={Arial15pt}>On: {formatDateFullMonthProper(document.issuedOn}</span>
 			</div>
 		</div>
 		
@@ -368,7 +368,7 @@ const Transcript = ({ document }) => (
             <div className="col-7">
               <span style={Arial15pt}>Date of Birth :{" "}
               <strong>
-                {format(document.recipient.Birthdate, "DD Month YYYY")}
+                {formatDateFullMonthProper(document.recipient.Birthdate)}
               </strong></span>
             </div>
           </div>
@@ -376,7 +376,7 @@ const Transcript = ({ document }) => (
             <div className="col-7">
               <span style={Arial15pt}>Date of Admission :{" "}
               <strong>
-                {format(document.recipient.AdmissionDate, "DD Month YYYY")}
+                {formatDateFullMonthProper(document.recipient.AdmissionDate)}
               </strong></span>
             </div>
           </div>
