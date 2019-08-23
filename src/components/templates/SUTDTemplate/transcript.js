@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React, { Component } from "react";
+import React from "react";
 import { get } from "lodash";
 import _ from "lodash";
 import SimplePrivacyFilterBanner from "../../TemplateCommon/Privacy/SimplePrivacyFilterBanner";
