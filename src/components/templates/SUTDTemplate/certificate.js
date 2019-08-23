@@ -161,7 +161,7 @@ const Template = ({ document }) => (
       </div>
       <div className="row d-flex justify-content-center">
         <span style={GothamBold12pt}>
-          {format(document.issuedOn, "DD/MM/YYYY")}
+          {format(document.issuedOn, "DD MMM YYYY")}
         </span>
       </div>
     </div>
