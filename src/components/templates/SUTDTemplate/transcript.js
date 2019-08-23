@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { format } from "date-fns";
 import React from "react";
 import { get } from "lodash";
+import { tz } from "moment-timezone";
 import _ from "lodash";
 import {  SUTD_CERT_LOGO,
   SUTD_SEAL,
@@ -9,6 +10,14 @@ import {  SUTD_CERT_LOGO,
   SUTD_FOOTER_2,
   SUTD_FOOTER_3
 } from "./images";
+
+export const TIMEZONE = "Asia/Singapore";
+
+export const formatDateFullMonthProper = dateString => {
+  if (!dateString) return null;
+  const date = new Date(dateString);
+  return tz(date, TIMEZONE).format("D MMMM YYYY");
+};
 
 const GothamMedium12pt = {
   fontFamily: "Arial",
