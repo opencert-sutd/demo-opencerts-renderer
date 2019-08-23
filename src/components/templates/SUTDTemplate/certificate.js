@@ -39,6 +39,7 @@ const GothamMedium10pt = {
   color: "black"
 };
 
+
 const GothamMedium12pt = {
   fontFamily: "Gotham Medium",
   fontSize: "12px",
