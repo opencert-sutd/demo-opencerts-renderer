@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { format } from "date-fns";
 import React from "react";
 import { get } from "lodash";
 import _ from "lodash";
@@ -8,14 +9,6 @@ import {  SUTD_CERT_LOGO,
   SUTD_FOOTER_2,
   SUTD_FOOTER_3
 } from "./images";
-
-export const TIMEZONE = "Asia/Singapore";
-
-export const formatDateFullMonthProper = dateString => {
-  if (!dateString) return null;
-  const date = new Date(dateString);
-  
-};
 
 const GothamMedium12pt = {
   fontFamily: "Arial",
@@ -222,7 +215,7 @@ export const DegreeFooter =({ document }) => {
 
 		<div className="row">
 			<div className="col-5">
-				<span style={Arial15pt}>On: {formatDateFullMonthProper(document.issuedOn)}</span>
+				<span style={Arial15pt}>On: {format(document.issuedOn, "DD Month YYYY")}</span>
 			</div>
 		</div>
 		
@@ -366,7 +359,7 @@ const Transcript = ({ document }) => (
             <div className="col-7">
               <span style={Arial15pt}>Date of Birth :{" "}
               <strong>
-                {formatDateFullMonthProper(document.recipient.Birthdate)}
+                {format(document.recipient.Birthdate, "DD Month YYYY")}
               </strong></span>
             </div>
           </div>
@@ -374,7 +367,7 @@ const Transcript = ({ document }) => (
             <div className="col-7">
               <span style={Arial15pt}>Date of Admission :{" "}
               <strong>
-                {formatDateFullMonthProper(document.recipient.AdmissionDate)}
+                {format(document.recipient.AdmissionDate, "DD Month YYYY")}
               </strong></span>
             </div>
           </div>
@@ -484,21 +477,21 @@ const Transcript = ({ document }) => (
       <div className="row">
         <div className="col-5">
           <div>
-            <img src={document.additionalData.footer[0].footer1} />
+            <img src={document.additionalData.footer[0].footer} />
           </div>
         </div>
       </div>
       <div className="row">
         <div className="col-5">
           <div>
-            <img src={document.additionalData.footer[1].footer2} />
+            <img src={document.additionalData.footer[1].footer} />
           </div>
         </div>
       </div>
       <div className="row">
         <div className="col-5">
           <div>
-            <img src={document.additionalData.footer[2].footer3} />
+            <img src={document.additionalData.footer[2].footer} />
           </div>
         </div>
       </div>
