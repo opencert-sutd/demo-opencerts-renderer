@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
+import { format } from "date-fns";
 import { get } from "lodash";
 import {
   SUTD_CERT_BG,
@@ -165,7 +166,7 @@ const Template = ({ document }) => (
       </div>
       <div className="row d-flex justify-content-center">
         <span style={GothamBold12pt}>
-          {formatDateFullMonthProper(document.issuedOn)}
+          {format(document.issuedOn, "DD/MM/YYYY")}
         </span>
       </div>
     </div>
