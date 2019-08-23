@@ -224,7 +224,7 @@ export const DegreeFooter =({ document }) => {
 
 		<div className="row">
 			<div className="col-5">
-				<span style={Arial15pt}>On: {formatDateFullMonthProper(document.issuedOn}</span>
+				<span style={Arial15pt}>On: {formatDateFullMonthProper(document.issuedOn)}</span>
 			</div>
 		</div>
 		
