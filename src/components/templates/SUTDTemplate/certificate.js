@@ -171,13 +171,13 @@ const Template = ({ document }) => (
       <div className="col-2">&nbsp;</div>
       <div className="col-6">
         <div>
-          <img src={SUTD_CHAIR} style={chairImgStyle} />
+          <img src={document.additionalData.certSignatories[0].signature} style={chairImgStyle} />
         </div>
       </div>
 
       <div className="col-2">
         <div>
-          <img src={SUTD_PRESIDENT}  style={presidentImgStyle} />
+          <img src={document.additionalData.certSignatories[1].signature}  style={presidentImgStyle} />
         </div>
       </div>
     </div>
