@@ -89,11 +89,6 @@ const presidentImgStyle = {
   borderBottom: "1px solid"
 };
 
-export const formatDateFullMonthProper = dateString => {
-  if (!dateString) return null;
-  const date = new Date(dateString);
-};
-
 export const Plan =({ document }) => {
 	
 	const DegreePlan = get(document, "recipient.Plan",undefined);
