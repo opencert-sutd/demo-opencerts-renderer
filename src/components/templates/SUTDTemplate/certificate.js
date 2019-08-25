@@ -209,7 +209,7 @@ const Template = ({ document }) => (
       <div className="col-11">&nbsp;</div>
       <div className="co1-4">
         <div>
-          <span style={GothamMedium8pt}>Serial No. {document.id} </span>
+          <span style={GothamMedium8pt}>Serial No. {document.recipient.DegID} </span>
         </div>
       </div>
     </div>
