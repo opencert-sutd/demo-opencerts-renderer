@@ -173,6 +173,7 @@ export const SubjectGrades = ({ document }) => {
 export const RemarksFooter =({ document }) => {
 	
 	const Remarks = get(document, "additionalData.Remarks",undefined);
+	const Remarks1 = Remarks.replace(/\\n/g,'\n');
 	return Remarks ? (
 	<div>
 		<hr align="center" width="100%" color="black" />
@@ -183,7 +184,7 @@ export const RemarksFooter =({ document }) => {
 		</div>
 		<br/>
 		<div className="row">
-			<span style={Arial15ptp}>{document.additionalData.Remarks}</span>
+			<span style={Arial15ptp}>{Remarks1}</span>
 		</div>
 	</div>
   ) :null ;
@@ -209,6 +210,10 @@ export const ThesisFooter =({ document }) => {
 export const DegreeFooter =({ document }) => {
 	
 	const Degree = get(document, "additionalData.Degree2",undefined);
+	const Degree1 = get(document, "additionalData.Degree",undefined);
+	const Degree11 = Degree1.replace(/\\n/g,'\n');
+	const Degree2 = get(document, "additionalData.Degree2",undefined);
+	const Degree22 = Degree2.replace(/\\n/g,'\n');
 	return Degree ? (
 	<div>
 		<div className="row">
@@ -218,8 +223,8 @@ export const DegreeFooter =({ document }) => {
 		</div>
 		<br/>
 		<ul>
-			<li><span style={Arial14ptp}>{document.additionalData.Degree}</span></li>
-			<li><span style={Arial14ptp}>{document.additionalData.Degree2}</span></li>
+			<li><span style={Arial14ptp}>{Degree11}</span></li>
+			<li><span style={Arial14ptp}>{Degree22}</span></li>
 		</ul>
 
 		<div className="row">
@@ -238,7 +243,7 @@ export const DegreeFooter =({ document }) => {
 		</div>
 		<br/>
 		<ul>
-			<li><span style={Arial14ptp}>{document.additionalData.Degree}</span></li>
+			<li><span style={Arial14ptp}>{Degree11}</span></li>
 		</ul>
 
 		<div className="row">
