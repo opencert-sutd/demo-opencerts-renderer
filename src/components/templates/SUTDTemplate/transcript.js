@@ -278,6 +278,23 @@ export const DegreeFooter =({ document }) => {
 	
 };
 
+export const TXTFooter =({ document }) => {
+	
+	const TXTData = get(document, "additionalData.TxtData",undefined);
+	return TXTData ? (
+	<div>
+		<br/>
+		<div className="row">
+			<div className="col-9">
+				<span style={Arial15pt}>{document.additionalData.TxtData}</span>
+			</div>
+		</div>
+	<br/>
+	</div>
+  ) :null ;
+	
+};
+
 const Transcript = ({ document }) => (
   <div className="container">
     <div className="transcript-content">
@@ -457,13 +474,18 @@ const Transcript = ({ document }) => (
 
 	  <hr align="center" width="100%" color="black" />
 	  
-	  <div>
+      <div>
         <ThesisFooter document={document} />
       </div>	
 	  
-	  <div>
+      <div>
         <DegreeFooter document={document} />
       </div>	
+
+      <div>
+        <TXTFooter certificate={certificate} />
+      </div>
+
 	<hr align="center" width="100%" color="black" />
       <div className="row d-flex justify-content-center">
         <span style={Arial15pt}>
