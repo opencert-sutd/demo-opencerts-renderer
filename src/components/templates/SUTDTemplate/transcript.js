@@ -62,7 +62,7 @@ const Arial15ptp = {
   textAlign: "left",
   color: "Black",
   "white-space": "pre-wrap",
-  marginLeft: "2rem",
+  marginLeft: "4rem",
   textTransform: "uppercase"
 };
 
@@ -185,6 +185,27 @@ export const RemarksFooter =({ document }) => {
 		<br/>
 		<div className="row">
 			<span style={Arial15ptp}>{Remarks1}</span>
+		</div>
+	</div>
+  ) :null ;
+	
+};
+
+export const AwardsFooter =({ document }) => {
+	
+	const Awards = get(document, "additionalData.Awards",undefined);
+	const Awards1 = Awards.replace(/\\n/g,'\n');
+	return Awards ? (
+	<div>
+		<br/>
+		<div className="row">
+			<div className="col-5">
+				<span style={Arial15pt}>Awards:</span>
+			</div>
+		</div>
+		<br/>
+		<div className="row">
+			<span style={Arial15ptp}>{Awards1}</span>
 		</div>
 	</div>
   ) :null ;
@@ -429,6 +450,10 @@ const Transcript = ({ document }) => (
 	  <div>
         <RemarksFooter document={document} />
       </div>  
+
+      <div>
+        <AwardsFooter document={document} />
+      </div>
 
 	  <hr align="center" width="100%" color="black" />
 	  
