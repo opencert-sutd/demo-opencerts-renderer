@@ -486,7 +486,7 @@ const Transcript = ({ document }) => (
       </div>	
 
       <div>
-        <TXTFooter certificate={certificate} />
+        <TXTFooter certificate={document} />
       </div>
 
 	<hr align="center" width="100%" color="black" />
