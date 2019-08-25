@@ -173,7 +173,7 @@ export const SubjectGrades = ({ document }) => {
 export const RemarksFooter =({ document }) => {
 	
 	const Remarks = get(document, "additionalData.Remarks",undefined);
-	const Remarks1 = Remarks.replace(/\\n/g,'\n');
+	const Remarks1 = Remarks ? Remarks.replace(/\\n/g,'\n') : null;
 	return Remarks ? (
 	<div>
 		<hr align="center" width="100%" color="black" />
@@ -194,7 +194,7 @@ export const RemarksFooter =({ document }) => {
 export const AwardsFooter =({ document }) => {
 	
 	const Awards = get(document, "additionalData.Awards",undefined);
-	const Awards1 = Awards.replace(/\\n/g,'\n');
+	const Awards1 = Awards ? Awards.replace(/\\n/g,'\n') : null;
 	return Awards ? (
 	<div>
 		<br/>
@@ -231,10 +231,13 @@ export const ThesisFooter =({ document }) => {
 export const DegreeFooter =({ document }) => {
 	
 	const Degree = get(document, "additionalData.Degree2",undefined);
+	
 	const Degree1 = get(document, "additionalData.Degree",undefined);
-	const Degree11 = Degree1.replace(/\\n/g,'\n');
+	const Degree11 = Degree1 ? Degree1.replace(/\\n/g,'\n') : null;
+	
 	const Degree2 = get(document, "additionalData.Degree2",undefined);
-	const Degree22 = Degree2.replace(/\\n/g,'\n');
+	const Degree22 = Degree2 ? Degree2.replace(/\\n/g,'\n') : null;
+	
 	return Degree ? (
 	<div>
 		<div className="row">
