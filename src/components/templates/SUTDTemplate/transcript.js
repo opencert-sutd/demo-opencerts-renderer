@@ -218,7 +218,7 @@ export const ThesisFooter =({ document }) => {
 	return Thesis ? (
 	<div>
 		<div className="row">
-			<div className="col-9">
+			<div className="col-12">
 				<span style={Arial15pt}>Thesis Title: {document.additionalData.Thesis}</span>
 			</div>
 		</div>
