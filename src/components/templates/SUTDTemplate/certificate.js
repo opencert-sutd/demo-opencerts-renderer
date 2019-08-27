@@ -167,6 +167,7 @@ const Template = ({ document }) => (
           with all its honor, privileges and obligations on
         </span>
       </div>
+      <BR/>
       <div className="row d-flex justify-content-center">
         <span style={GothamBold12pt}>
           {formatDateFullMonthProper(document.issuedOn)}
