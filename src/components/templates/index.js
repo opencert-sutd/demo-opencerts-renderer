@@ -7,6 +7,7 @@
 import DefaultTemplate from "./default";
 import CustomTemplate from "./customTemplate";
 import SUTDTemplate from "./SUTDTemplate";
+import SUTD5Template from "./SUTD5Template";
 import GovTechDemoCert from "./govtechDemoCert";
 
 export default {
@@ -14,5 +15,6 @@ export default {
   CUSTOM_TEMPLATE: CustomTemplate,
   GOVTECH_DEMO: GovTechDemoCert,
   SUTD_TEMPLATE: SUTDTemplate,
+  SUTD_5TEMPLATE: SUTD5Template,
   NULL: []
 };
