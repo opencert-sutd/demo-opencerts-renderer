@@ -93,8 +93,8 @@ export const fullWidthStyle = {
   height: "auto"
 };
 
-export const SubjectGrades = ({ certificate }) => {
-  const fifthrowtype = _(certificate.transcript)
+export const SubjectGrades = ({ document }) => {
+  const fifthrowtype = _(document.transcript)
     .groupBy(t => t.Type)
     .map((values, key) => ({
       Type: key,
@@ -179,7 +179,7 @@ export const SubjectGrades = ({ certificate }) => {
   return <div>{subjects}</div>;
 };
 
-const Transcript = ({ certificate }) => (
+const Transcript = ({ document }) => (
   <div className="container">
     <div className="transcript-content">
       <style>
@@ -296,21 +296,20 @@ const Transcript = ({ certificate }) => (
 
       <div className="row">
         <div className="col-7">
-          <span style={Arial12pt}>{certificate.recipient.name}</span>
         </div>
 		<br/>
 		<br/>
         <div className="col-7">
           <div className="row">
             <div className="col-7">
-              <span style={Arial15pt}>SUTD ID :<strong>{certificate.recipient.studentId}</strong></span>
+              <span style={Arial15pt}>SUTD ID :<strong>{document.recipient.studentId}</strong></span>
             </div>
           </div>
           <div className="row">
             <div className="col-7">
               <span style={Arial15pt}>Date of Birth :{" "}
               <strong>
-                {formatDateFullMonthProper(certificate.recipient.Birthdate)}
+                {formatDateFullMonthProper(document.recipient.Birthdate)}
               </strong></span>
             </div>
           </div>
@@ -318,7 +317,7 @@ const Transcript = ({ certificate }) => (
             <div className="col-7">
               <span style={Arial15pt}>Date of Admission :{" "}
               <strong>
-                {formatDateFullMonthProper(certificate.recipient.AdmissionDate)}
+                {formatDateFullMonthProper(document.recipient.AdmissionDate)}
               </strong></span>
             </div>
           </div>
@@ -332,7 +331,7 @@ const Transcript = ({ certificate }) => (
         </div>
         <div className="col-5" style={{ marginTop: "1rem" }}>
           {" "}
-          <span style={Arial15pt}><strong>{certificate.recipient.Programme}</strong></span>
+          <span style={Arial15pt}><strong>{document.recipient.Programme}</strong></span>
         </div>
 
       </div>
@@ -343,7 +342,7 @@ const Transcript = ({ certificate }) => (
       <br />
 
       <div>
-        <SubjectGrades certificate={certificate} />
+        <SubjectGrades document={document} />
       </div>
 	  
 	  
@@ -399,21 +398,21 @@ const Transcript = ({ certificate }) => (
       <div className="row">
         <div className="col-5">
           <div>
-            <img src={certificate.additionalData.footer[0].footer} />
+            <img src={document.additionalData.footer[0].footer} />
           </div>
         </div>
       </div>
       <div className="row">
         <div className="col-5">
           <div>
-            <img src={certificate.additionalData.footer[1].footer} />
+            <img src={document.additionalData.footer[1].footer} />
           </div>
         </div>
       </div>
       <div className="row">
         <div className="col-5">
           <div>
-            <img src={certificate.additionalData.footer[2].footer} />
+            <img src={certificdocumentate.additionalData.footer[2].footer} />
           </div>
         </div>
       </div>
@@ -422,7 +421,7 @@ const Transcript = ({ certificate }) => (
 );
 
 Transcript.propTypes = {
-  certificate: PropTypes.object.isRequired
+  document: PropTypes.object.isRequired
 };
 
 export default Transcript;
