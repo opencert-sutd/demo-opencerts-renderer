@@ -412,7 +412,7 @@ const Transcript = ({ document }) => (
       <div className="row">
         <div className="col-5">
           <div>
-            <img src={certificdocumentate.additionalData.footer[2].footer} />
+            <img src={document.additionalData.footer[2].footer} />
           </div>
         </div>
       </div>
