@@ -296,6 +296,7 @@ const Transcript = ({ document }) => (
 
       <div className="row">
         <div className="col-7">
+	<span style={Arial12pt}>{document.recipient.name}</span>
         </div>
 		<br/>
 		<br/>
