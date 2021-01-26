@@ -324,7 +324,7 @@ const Transcript = ({ document }) => (
             <div className="col-7">
               <span style={Arial15pt}>Date of Admission :{" "}
               <strong>
-                {formatDateFullMonthProper(document.recipient.AdmissionDate)}
+                {formatDateFullMonth(document.recipient.AdmissionDate)}
               </strong></span>
             </div>
           </div>
