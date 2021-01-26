@@ -3,6 +3,7 @@ import React from "react";
 import { get } from "lodash";
 import _ from "lodash";
 import { tz } from "moment-timezone";
+import { format, parseISO } from "date-fns";
 import {  SUTD_CERT_LOGO,
   SUTD_SEAL,
   SUTD_FOOTER_1,
@@ -16,6 +17,11 @@ export const formatDateFullMonthProper = dateString => {
   if (!dateString) return null;
   const date = new Date(dateString);
   return tz(date, TIMEZONE).format("D MMMM YYYY");
+};
+
+export const formatDateFullMonth = dateString => {
+  if (!dateString) return null;
+  return format(parseISO(dateString), "dd MMMM yyyy");
 };
 
 const GothamMedium12pt = {
