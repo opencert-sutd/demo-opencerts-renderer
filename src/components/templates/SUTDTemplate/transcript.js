@@ -4,7 +4,6 @@ import React from "react";
 import { get } from "lodash";
 import { tz } from "moment-timezone";
 import _ from "lodash";
-import { format, parseISO } from "date-fns";
 import {  SUTD_CERT_LOGO,
   SUTD_SEAL,
   SUTD_FOOTER_1,
@@ -20,10 +19,6 @@ export const formatDateFullMonthProper = dateString => {
   return tz(date, TIMEZONE).format("D MMMM YYYY");
 };
 
-export const formatDateFullMonth = dateString => {
-  if (!dateString) return null;
-  return format(parseISO(dateString), "dd MMMM yyyy");
-};
 
 const GothamMedium12pt = {
   fontFamily: "Arial",
@@ -428,7 +423,7 @@ const Transcript = ({ document }) => (
             <div className="col-7">
               <span style={Arial15pt}>Date of Admission :{" "}
               <strong>
-                {formatDateFullMonth(document.recipient.AdmissionDate)}
+                {formatDateFullMonthProper(document.recipient.AdmissionDate)}
               </strong></span>
             </div>
           </div>
