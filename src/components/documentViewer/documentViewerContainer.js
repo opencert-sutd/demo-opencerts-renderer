@@ -75,9 +75,13 @@ class DocumentViewerContainer extends Component {
     const renderDocument = this.handleDocumentChange;
     const selectTemplateTab = this.selectTemplateTab;
     const getTemplates = () => this.state.templates;
+	  const print = () => window.print();
+    //Added By Suresh on 26Jan2021. As print buttion is not working.    
 
     window.openAttestation = {
       renderDocument,
+      print,
+      //Added By Suresh on 26Jan2021. As print buttion is not working.
       selectTemplateTab,
       getTemplates
     };
