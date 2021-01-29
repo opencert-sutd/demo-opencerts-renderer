@@ -89,6 +89,7 @@ class DocumentViewerContainer extends Component {
       const parentFrameConnection = connectToParent({
         methods: {
           renderDocument,
+          print,
           selectTemplateTab
         }
       }).promise;
