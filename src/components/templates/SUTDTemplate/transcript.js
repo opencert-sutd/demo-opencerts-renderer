@@ -16,7 +16,7 @@ export const TIMEZONE = "Asia/Singapore";
 export const formatDateFullMonthProper = dateString => {
   if (!dateString) return null;
   const date = new Date(dateString);
-  return tz(date, TIMEZONE).format("D MMMM yyyy");
+  return tz(date, TIMEZONE).format("D MMMM YYYY");
 };
 
 export const formatDateFullMonth = dateString => {
