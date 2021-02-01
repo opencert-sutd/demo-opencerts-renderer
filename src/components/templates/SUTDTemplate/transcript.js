@@ -1,10 +1,9 @@
 import PropTypes from "prop-types";
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 import React from "react";
 import { get } from "lodash";
 import { tz } from "moment-timezone";
 import _ from "lodash";
-import { formated, parseISO } from "date-fns";
 import {  SUTD_CERT_LOGO,
   SUTD_SEAL,
   SUTD_FOOTER_1,
@@ -22,7 +21,7 @@ export const formatDateFullMonthProper = dateString => {
 
 export const formatDateFullMonth = dateString => {
   if (!dateString) return null;
-  return formated(parseISO(dateString), "dd MMMM yyyy");
+  return format(parseISO(dateString), "dd MMMM yyyy");
 };
 
 const GothamMedium12pt = {
