@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { format, parseISO } from "date-fns";
+import { format } from "date-fns";
 import React from "react";
 import { get } from "lodash";
 import { tz } from "moment-timezone";
@@ -15,7 +15,8 @@ export const TIMEZONE = "Asia/Singapore";
 
 export const formatDateFullMonthProper = dateString => {
   if (!dateString) return null;
-  return format(parseISO(dateString), "dd MMMM yyyy");
+  const date = new Date(dateString);
+  return tz(date, TIMEZONE).format("D MMMM YYYY");
 };
 
 const GothamMedium12pt = {
