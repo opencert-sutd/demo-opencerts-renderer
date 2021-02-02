@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { format, parseISO } from "date-fns";
+import { format, parse } from "date-fns";
 import React from "react";
 import { get } from "lodash";
 import { tz } from "moment-timezone";
@@ -21,7 +21,13 @@ export const formatDateFullMonthProper = dateString => {
 
 export const formatDateFullMonth = dateString => {
   if (!dateString) return null;
-  return format(parseISO(dateString), "D MMMM YYYY");
+  return format(parse(dateString), "D MMMM YYYY");
+};
+
+export const formatDateFullMonthDOB = dateString => {
+  if (!dateString) return null;
+  const date = new Date(dateString);	
+  return format(date, "D MMMM YYYY");
 };
 
 const GothamMedium12pt = {
@@ -419,7 +425,7 @@ const Transcript = ({ document }) => (
             <div className="col-7">
               <span style={Arial15pt}>Date of Birth :{" "}
               <strong>
-                {formatDateFullMonthProper(document.recipient.Birthdate)}	
+                {formatDateFullMonthDOB(document.recipient.Birthdate)}	
               </strong></span>
             </div>
           </div>
