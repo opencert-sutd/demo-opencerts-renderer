@@ -17,8 +17,7 @@ export const TIMEZONE = "Asia/Singapore";
 export const formatDateFullMonthProper = dateString => {
   if (!dateString) return null;
   const date = new Date(dateString);
-  // return tz(date, TIMEZONE).format("D MMMM YYYY");
-  return format(date, "D MMMM YYYY");	
+  return tz(date, TIMEZONE).format("D MMMM YYYY");
 };
 
 //Added By Suresh For DOB field in Cert Begin
