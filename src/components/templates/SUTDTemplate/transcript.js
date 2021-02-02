@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
-import { format, parse } from "date-fns";
+import { format, parseISO } from "date-fns";
+// import { format } from "date-fns"; hidden and added above line for DOB field
 import React from "react";
 import { get } from "lodash";
 import { tz } from "moment-timezone";
@@ -19,9 +20,10 @@ export const formatDateFullMonthProper = dateString => {
   return tz(date, TIMEZONE).format("D MMMM YYYY");
 };
 
+//Added By Suresh For DOB field in Cert Begin
 export const formatDateFullMonth = dateString => {
   if (!dateString) return null;
-  return format(parse(dateString), "D MMMM YYYY");
+  return format(parseISO(dateString), "D MMMM YYYY");
 };
 
 export const formatDateFullMonthDOB = dateString => {
@@ -29,6 +31,8 @@ export const formatDateFullMonthDOB = dateString => {
   const date = new Date(dateString);	
   return format(date, "D MMMM YYYY");
 };
+
+//Added By Suresh For DOB field in Cert End
 
 const GothamMedium12pt = {
   fontFamily: "Arial",
@@ -425,7 +429,7 @@ const Transcript = ({ document }) => (
             <div className="col-7">
               <span style={Arial15pt}>Date of Birth :{" "}
               <strong>
-                {formatDateFullMonth(document.recipient.Birthdate)}	
+                {formatDateFullMonthProper(document.recipient.Birthdate)}	
               </strong></span>
             </div>
           </div>
