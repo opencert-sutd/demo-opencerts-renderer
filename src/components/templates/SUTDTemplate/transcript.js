@@ -20,22 +20,14 @@ export const formatDateFullMonthProper = dateString => {
   return tz(date, TIMEZONE).format("D MMMM YYYY");
 };
 
-//Added By Suresh For DOB field in Cert Begin
+//Added By Suresh For DOB field in Cert On Jan 2021 Begin
 export const formatDateFullMonth = dateString => {
   if (!dateString) return null;
    dateString = dateString.replace("+08:00","");
-  const date = new Date(dateString);
-//return date;	
+   const date = new Date(dateString);	
    return tz(date, TIMEZONE).format("D MMMM YYYY");
 };
-
-export const formatDateFullMonthDOB = dateString => {
-  if (!dateString) return null;
-  const date = new Date(dateString);	
-  return format(date, "D MMMM YYYY");
-};
-
-//Added By Suresh For DOB field in Cert End
+//Added By Suresh For DOB field in Cert Jan-2021 End
 
 const GothamMedium12pt = {
   fontFamily: "Arial",
