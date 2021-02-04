@@ -20,13 +20,14 @@ export const formatDateFullMonthProper = dateString => {
   return tz(date, TIMEZONE).format("D MMMM YYYY");
 };
 
+//Added By Suresh For DOB field in Cert On Jan 2021 Begin
 export const formatDateFullMonth = dateString => {
   if (!dateString) return null;
-  const dateString1 = dateString.replace("T00:00:00+08:00","T00:00:00");
-  const date = new Date(dateString1);
-return date;	
-  // return tz(date, TIMEZONE1).format("D MMMM YYYY");
+   dateString = dateString.replace("+08:00","");
+   const date = new Date(dateString);	
+   return tz(date, TIMEZONE).format("D MMMM YYYY");
 };
+//Added By Suresh For DOB field in Cert Jan-2021 End
 
 const GothamMedium12pt = {
   fontFamily: "Arial",
@@ -320,7 +321,7 @@ const Transcript = ({ document }) => (
             <div className="col-7">
               <span style={Arial15pt}>Date of Birth :{" "}
               <strong>
-                {formatDateFullMonthProper(document.recipient.Birthdate)}
+                {formatDateFullMonth(document.recipient.Birthdate)}
               </strong></span>
             </div>
           </div>
