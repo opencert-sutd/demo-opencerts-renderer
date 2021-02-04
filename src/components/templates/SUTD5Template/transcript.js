@@ -21,7 +21,9 @@ export const formatDateFullMonthProper = dateString => {
 
 export const formatDateFullMonth = dateString => {
   if (!dateString) return null;
-  return format(parseISO(dateString), "dd MMMM yyyy");
+  dateString = dateString.replace("+08:00","");
+  const date = new Date(dateString);
+  return tz(date, TIMEZONE).format("D MMMM YYYY");
 };
 
 const GothamMedium12pt = {
@@ -316,7 +318,7 @@ const Transcript = ({ document }) => (
             <div className="col-7">
               <span style={Arial15pt}>Date of Birth :{" "}
               <strong>
-                {formatDateFullMonthProper(document.recipient.Birthdate)}
+                {formatDateFullMonth(document.recipient.Birthdate)}
               </strong></span>
             </div>
           </div>
