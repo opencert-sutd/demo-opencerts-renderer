@@ -24,7 +24,8 @@ export const formatDateFullMonth = dateString => {
   if (!dateString) return null;
   const dateString1 = dateString.replace("T00:00:00+08:00","T00:00:00");
   const date = new Date(dateString1);
-  return tz(date, TIMEZONE1).format("D MMMM YYYY");
+return date;	
+  // return tz(date, TIMEZONE1).format("D MMMM YYYY");
 };
 
 const GothamMedium12pt = {
