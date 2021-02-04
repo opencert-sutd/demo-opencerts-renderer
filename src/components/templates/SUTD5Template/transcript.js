@@ -21,7 +21,7 @@ export const formatDateFullMonthProper = dateString => {
 
 export const formatDateFullMonth = dateString => {
   if (!dateString) return null;
-  dateString = dateString.replace("+08:00","");
+  dateString = dateString.replace("T00:00:00+08:00","");
   const date = new Date(dateString);
   return tz(date, TIMEZONE).format("D MMMM YYYY");
 };
