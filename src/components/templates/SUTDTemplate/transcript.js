@@ -23,10 +23,10 @@ export const formatDateFullMonthProper = dateString => {
 //Added By Suresh For DOB field in Cert Begin
 export const formatDateFullMonth = dateString => {
   if (!dateString) return null;
-  const dateString1 = dateString.replace("T00:00:00+08:00","T00:00:00");
+  const dateString1 = dateString.replace("+08:00","");
   const date = new Date(dateString1);
-return date;	
-  // return tz(date, TIMEZONE1).format("D MMMM YYYY");
+//return date;	
+   return tz(date, TIMEZONE).format("D MMMM YYYY");
 };
 
 export const formatDateFullMonthDOB = dateString => {
