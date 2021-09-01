@@ -111,7 +111,6 @@ export const Plan =({ document }) => {
 export const SubPlan =({ document }) => {
 	
 	const SubPlan1 = get(document, "recipient.SubPlan",undefined);
-	const SubPlan11 = SubPlan1 ? SubPlan1.replace(/\\n/g,'\n') : null;
 	return SubPlan1 ? (
       <div className="row d-flex justify-content-center align-items-center">
       <ol>  
