@@ -117,7 +117,7 @@ export const SubPlan =({ document }) => {
         <ul>
              <span style={GothamMedium165pt}>{SubPlan11}</span>
 	</ul>
-      </div>) ;
+      </div>) :null;
  	
 };
 
