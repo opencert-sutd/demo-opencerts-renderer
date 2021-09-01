@@ -158,13 +158,13 @@ const Template = ({ document }) => (
       <div className="row d-flex justify-content-center align-items-center">
         <span style={GothamMedium165pt}>{document.recipient.Honors}</span>
       </div>
-//Added By Suresh to multiple lines Sep 2021 Begin	  
+	  
       <div className="row d-flex justify-content-center align-items-center">
 	  <ul>
 	       <li><span style={GothamMedium165pt}>{document.recipient.SubPlan}</span></li>	
 	  </ul>
       </div>
-//Added By Suresh to multiple lines Sep-2021 End	
+	
       <br />
       <div className="row d-flex justify-content-center">
         <span style={GothamMedium12pt}>
