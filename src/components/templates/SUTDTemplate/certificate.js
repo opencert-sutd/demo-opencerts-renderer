@@ -115,9 +115,9 @@ export const SubPlan =({ document }) => {
 	return SubPlan1 ? (
       <div className="row d-flex justify-content-center align-items-center">
         
-             <ul><li><span style={GothamMedium165pt}>{SubPlan11}</span></li></ul>
+             <span style={GothamMedium165pt}>{SubPlan11}</span>
 	
-      </div>);
+      </div>) :null;
  	
 };
 
