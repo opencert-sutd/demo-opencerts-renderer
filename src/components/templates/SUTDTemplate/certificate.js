@@ -108,14 +108,14 @@ export const Plan =({ document }) => {
  	
 };
 
-export const SubPlan =({ document }) => {
+export const SubPlan1 =({ document }) => {
 	
-	const SubPlan1 = get(document, "recipient.SubPlan",undefined);
-	return SubPlan1 ? (
+	const SubPlan11 = get(document, "recipient.SubPlan1",undefined);
+	return SubPlan11 ? (
       <div className="row d-flex justify-content-center align-items-center">
-      <ol>  
-          <span style={GothamMedium165pt}>{SubPlan1}</span>
-	</ol>
+
+          <span style={GothamMedium165pt}>{SubPlan11}</span>
+
       </div>) :null;
  	
 };
@@ -171,8 +171,13 @@ const Template = ({ document }) => (
       <div className="row d-flex justify-content-center align-items-center">
         <span style={GothamMedium165pt}>{document.recipient.Honors}</span>
       </div>
+
+      <div className="row d-flex justify-content-center align-items-center">
+	       <span style={GothamMedium165pt}>{document.recipient.SubPlan}</span>
+      </div>
+
       <div>
-        <SubPlan document={document} />
+        <SubPlan1 document={document} />
       </div>
 	
 	
