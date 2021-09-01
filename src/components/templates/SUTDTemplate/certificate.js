@@ -110,9 +110,7 @@ export const Plan =({ document }) => {
 
 
 const Template = ({ document }) => (
-
-const SubPlan1 = get(document, "recipient.SubPlan",undefined);	
-const SubPlan11 = SubPlan1 ? SubPlan1.replace(/\\n/g,'\n') : null;	
+	
 	
   <div className="container" style={borderImgStyle}>
     <img
@@ -162,9 +160,8 @@ const SubPlan11 = SubPlan1 ? SubPlan1.replace(/\\n/g,'\n') : null;
         <span style={GothamMedium165pt}>{document.recipient.Honors}</span>
       </div>
 	  
-      <div className="row d-flex justify-content-center align-items-center">
-	       
-<span style={GothamMedium165pt}>{SubPlan11}</span>
+      <div className="row d-flex justify-content-center align-items-center">	       
+	  <span style={GothamMedium165pt}>{document.recipient.SubPlan}</span>	  
       </div>
 	
       <br />
