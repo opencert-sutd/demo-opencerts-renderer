@@ -114,9 +114,9 @@ export const SubPlan =({ document }) => {
 	const SubPlan11 = SubPlan1 ? SubPlan1.replace(/\\n/g,'\n') : null;
 	return SubPlan1 ? (
       <div className="row d-flex justify-content-center align-items-center">
-        
-             <span style={GothamMedium165pt}>{SubPlan11}</span>
-	
+      <ol>  
+          <li>   <span style={GothamMedium165pt}>{SubPlan11}</span> </li>
+	</ol>
       </div>) :null;
  	
 };
