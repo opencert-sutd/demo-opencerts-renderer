@@ -173,9 +173,9 @@ const Template = ({ document }) => (
         <span style={GothamMedium165pt}>{document.recipient.Honors}</span>
       </div>
 
-      <div>
-        <SubPlan document={document} />
-      </div>
+      <div className="row d-flex justify-content-center align-items-center">
+	<span style={GothamMedium165pt}>{document.recipient.SubPlan}</span>
+      </div>	
 	
       <br />
       <div className="row d-flex justify-content-center">
