@@ -128,7 +128,9 @@ export const SubjectGrades = ({ document }) => {
           <span style={Arial15pt}>{t.courseCode}</span>
         </div>
 		<div className="col-1">&nbsp;</div>
-        <div className="col-auto">
+//Hidden and Added By Suresh to remove space between Subject code and title
+// <div className="col-auto">
+		<div className="col-1 grade">
           <span style={Arial15pt}>{t.name}</span>
         </div>
 		<div className="col">&nbsp;</div>
