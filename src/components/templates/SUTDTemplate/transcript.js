@@ -128,9 +128,9 @@ export const SubjectGrades = ({ document }) => {
           <span style={Arial15pt}>{t.courseCode}</span>
         </div>
 	<div className="col-1">&nbsp;</div>
-//Hidden and Added By Suresh to remove space between Subject code and title
+
         <div className="col-auto">
-//	<div className="col-1 grade">
+
           <span style={Arial15pt}>{t.name}</span>
         </div>
 		<div className="col">&nbsp;</div>
@@ -181,6 +181,25 @@ export const SubjectGrades = ({ document }) => {
   return <div>{subjects}</div>;
 };
 
+export const RemarksFooter =({ document }) => {
+	const Remarks = get(document, "additionalData.Remarks",undefined);
+	const Remarks1 = Remarks ? Remarks.replace(/\\n/g,'\n') : null;
+	return Remarks ? (
+	<div>
+		<hr align="center" width="100%" color="black" />
+		<div className="row">
+			<div className="col-5">
+				<span style={Arial15pt}>Remarks:</span>
+			</div>
+		</div>
+		<br/>
+		<div className="row">
+			<span style={Arial15ptp}>{Remarks1}</span>
+		</div>
+	</div>
+  ) :null ;
+	
+};
 
 export const AwardsFooter =({ document }) => {
 	
