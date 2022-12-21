@@ -183,7 +183,7 @@ export const SubjectGrades = ({ document }) => {
 
 
 export const RemarksFooter =({ document }) => {
-	const Remarks = get(document, "additionalData.Remarks",undefined);
+	//const Remarks = get(document, "additionalData.Remarks",undefined);
 	const Remarks1 = Remarks ? Remarks.replace(/\\n/g,'\n') : null;
 	return Remarks ? (
 	<div>
