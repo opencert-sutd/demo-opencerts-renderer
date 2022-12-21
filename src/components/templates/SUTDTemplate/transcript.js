@@ -129,7 +129,7 @@ export const SubjectGrades = ({ document }) => {
         </div>
 	<div className="col-1">&nbsp;</div>
 
-        <div className="col-1 grade">
+        <div className="col-auto">
 
           <span style={Arial15pt}>{t.name}</span>
         </div>
