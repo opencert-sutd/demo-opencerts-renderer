@@ -182,26 +182,6 @@ export const SubjectGrades = ({ document }) => {
 };
 
 
-export const RemarksFooter =({ document }) => {
-	const Remarks = get(document, "additionalData.Remarks",undefined);
-	const Remarks1 = Remarks ? Remarks.replace(/\\n/g,'\n') : null;
-	return Remarks ? (
-	<div>
-		<hr align="center" width="100%" color="black" />
-		<div className="row">
-			<div className="col-5">
-				<span style={Arial15pt}>Remarks:</span>
-			</div>
-		</div>
-		<br/>
-		<div className="row">
-			<span style={Arial15ptp}>{Remarks1}</span>
-		</div>
-	</div>
-  ) :null ;
-	
-};
-
 export const AwardsFooter =({ document }) => {
 	
 	const Awards = get(document, "additionalData.Awards",undefined);
