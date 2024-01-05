@@ -225,6 +225,40 @@ const Template = ({ document }) => (
         </div>
       </div>
     </div>
+
+   <div className="row">
+      <div className="col-2">&nbsp;</div>
+      <div className="col-6">
+        <div>
+          <img src={document.additionalData.certSignatories[2].signature} style={chairImgStyle} />
+        </div>
+      </div>
+
+      <div className="col-2">
+        <div>
+          <img src={document.additionalData.certSignatories[3].signature}  style={presidentImgStyle} />
+        </div>
+      </div>
+    </div>
+
+    <div className="row">
+      <div style={{ marginRight: "13rem" }}>&nbsp;</div>
+      <div style={{ marginRight: "31rem" }}>
+        <div>
+          <span style={GothamMedium10pt}>{document.additionalData.Signatorytype[2].type} </span>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <span style={GothamMedium10pt}>{document.additionalData.Signatorytype[3].type}</span>
+        </div>
+      </div>
+    </div>	
+	
+
+
+	      
     <div className="row">
       {" "}
       <div className="col-11">&nbsp;</div>
