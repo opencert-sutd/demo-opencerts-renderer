@@ -1,13 +1,15 @@
 import PropTypes from "prop-types";
+import { format, parseISO } from "date-fns";
+// import { format } from "date-fns"; hidden and added above line for DOB field
 import React from "react";
-import { format } from "date-fns";
-import { tz } from "moment-timezone";
 import { get } from "lodash";
-import {
-  SUTD_CERT_BG,
-  SUTD_CERT_LOGO,
-  SUTD_CHAIR,
-  SUTD_PRESIDENT
+import { tz } from "moment-timezone";
+import _ from "lodash";
+import {  SUTD_CERT_LOGO,
+  SUTD_SEAL,
+  SUTD_FOOTER_1,
+  SUTD_FOOTER_2,
+  SUTD_FOOTER_3
 } from "./images";
 
 export const TIMEZONE = "Asia/Singapore";
@@ -18,228 +20,561 @@ export const formatDateFullMonthProper = dateString => {
   return tz(date, TIMEZONE).format("D MMMM YYYY");
 };
 
-const GothamMedium22pt = {
-  fontFamily: "Gotham Medium",
-  fontSize: "22px",
-  textAlign: "center",
-  color: "Brown"
+//Added By Suresh For DOB field in Cert On Jan 2021 Begin
+export const formatDateFullMonth = dateString => {
+  if (!dateString) return null;
+   dateString = dateString.replace("+08:00","");
+   const date = new Date(dateString);	
+   return tz(date, TIMEZONE).format("D MMMM YYYY");
 };
-
-const GothamMedium8pt = {
-  fontFamily: "Gotham Medium",
-  fontSize: "7px",
-  textAlign: "right",
-  color: "black"
-};
-
-const GothamMedium10pt = {
-  fontFamily: "Gotham Medium",
-  fontSize: "10px",
-  textAlign: "center",
-  color: "black"
-};
-
+//Added By Suresh For DOB field in Cert Jan-2021 End
 
 const GothamMedium12pt = {
-  fontFamily: "Gotham Medium",
-  fontSize: "12px",
+  fontFamily: "Arial",
+  fontSize: "1.5em",
   textAlign: "center",
-  color: "black"
+  color: "brown"
 };
 
-const GothamBold12pt = {
-  fontFamily: "Gotham Medium",
+const Arial12pt = {
+  fontFamily: "Arial",
+  fontSize: "18px",
+  textAlign: "center",
+  color: "black",
+  fontWeight: "bold"
+};
+
+const Arial25pt = {
+  fontFamily: "Arial",
+  fontSize: "25px",
   fontStyle: "Bold",
-  fontSize: "12px",
-  textAlign: "center",
-  color: "black"
-};
-
-const GothamMedium165pt = {
-  fontFamily: "Gotham Medium",
-  fontSize: "16.5px",
-  textAlign: "center",
-  color: "Brown"
-};
-
-const GothamMedium265pt = {
-  fontFamily: "Gotham Medium",
-  fontSize: "26.5px",
   textAlign: "center",
   color: "Black"
 };
 
-const borderImgStyle = {
-  border: "1px solid",
-  borderColor: "black",
-  backgroundPosition: "1px",
-  backgroundRepeat: "repeat",
-  backgroundImage: `url(${SUTD_CERT_BG})`,
-  backgroundSize: "75px 75px"
+const Arial15pt = {
+  fontFamily: "Arial",
+  fontSize: "16px",
+  fontStyle: "Bold",
+  color: "Black"
 };
 
-const logoImgStyle = {
-  width: "150px",
-  height: "60px",
-  marginLeft: "43%",
-  marginTop: "5%"
+const Arial5pt = {
+  fontFamily: "Arial",
+  fontSize: "10px",
+  color: "Brown"
 };
 
-const chairImgStyle = {
-  width: "150px",
-  height: "60px",
-  borderBottom: "1px solid"
+const Arial15ptp = {
+  fontFamily: "Arial",
+  fontSize: "14px",
+  fontStyle: "Bold",
+  textAlign: "left",
+  color: "Black",
+  "white-space": "pre-wrap",
+  marginLeft: "4rem",
+  textTransform: "uppercase"
 };
 
-const presidentImgStyle = {
-  width: "150px",
-  height: "60px",
-  borderBottom: "1px solid"
+const Arial14ptp = {
+  fontFamily: "Arial",
+  fontSize: "16px",
+  fontStyle: "Bold",
+  textAlign: "left",
+  color: "Black",
+  "white-space": "pre-wrap",
+
+};
+
+export const thWidth60Left = {
+  width: "80%",
+  textAlign: "left"
 };
 
 export const Plan =({ document }) => {
 	
-	const DegreePlan = get(document, "recipient.Plan",undefined);
+	const DegreePlan = get(document, "recipient.TransPlan",undefined);
 	return DegreePlan ? (
-      <div className="row d-flex justify-content-center align-items-center">
-        {" "}
-        <span style={GothamMedium165pt}>{document.recipient.Plan}</span>
-      </div>) :null;
+    <div className="row">
+       <div className="col-2"> <span style={Arial15pt}>Plan :</span></div>
+        <div className="col-5">
+          {" "}
+          <span style={Arial15pt}><strong>{document.recipient.TransPlan}</strong></span>
+        </div>
+    </div>) : <br/>;
  	
 };
 
-export const SubPlan1 =({ document }) => {
-	
-	const SubPlan11 = get(document, "recipient.SubPlan1",undefined);
-	return SubPlan11 ? (
-      <div className="row d-flex justify-content-center align-items-center">
+export const SubjectGrades = ({ document }) => {
+  const semesters = _(document.transcript)
+    .groupBy(t => t.semester, t => t.cumGPA)
+    .map((values, key) => ({
+      semester: key,
+      grades: values
+    }))
+    .orderBy(s => s.semester)
+    .value();
 
-          <span style={GothamMedium165pt}>{SubPlan11}</span>
+  const semesterHeader = s => (
+    <div className="row">
+      <div className="semester-header exemption col-12"><span style={Arial15pt}>{s.semester}</span></div>
+    </div>
+  );
 
-      </div>) :null;
- 	
+  const subjects = semesters.map((s, j) => {
+    const semesterSubjects = s.grades.map((t, i) => (
+      <div className="row" key={i}>
+       <div className="col-1">
+          <span style={Arial15pt}>{t.courseCode}</span>
+        </div>
+	<div className="col-1">&nbsp;</div>
+
+        <div className="col-auto">
+
+          <span style={Arial15pt}>{t.name}</span>
+        </div>
+		<div className="col">&nbsp;</div>
+        <div className="col-1 credit-unit">
+          <span style={Arial15pt}>{t.courseLevel}</span>
+        </div>
+        <div className="col-1 credit-unit">
+          <span style={Arial15pt}>{t.courseCredit}</span>
+        </div>
+        <div className="col-1 grade">
+          <span style={Arial15pt}>{t.grade}</span>
+        </div>
+      </div>
+    ));
+    const cgpa1 = get(s.grades, "[0].cumGPA");
+	const cgpa = cgpa1 == 0 ? 'Not Applicable' : cgpa1;
+    const tgpa1 = get(s.grades, "[0].termGPA");
+	const tgpa = tgpa1 == 0 ? "Not Applicable" : tgpa1;
+    return (
+      <div key={j}>
+        {semesterHeader(s)}
+		<br/>
+        {semesterSubjects}
+        <br />
+
+        <div className="row">
+          <div className="col-3">
+            <span style={Arial15pt}>Term Grade Point Average : </span>
+          </div>
+		  <div className="col-7">
+			<span style={Arial15pt}><strong>{tgpa}</strong></span>
+          </div>
+          <div className="col-3">
+            <span style={Arial15pt}>Cumulative Grade Point Average :</span>
+          </div>
+          <div className="col-7">
+             <span style={Arial15pt}><strong>{cgpa}</strong></span>
+          </div>		  
+          <div className="col-6">&nbsp;</div>
+          <div>
+            <span style={Arial25pt}>*****</span>
+          </div>
+        </div>
+      </div>
+    );
+  });
+
+  return <div>{subjects}</div>;
 };
 
+export const RemarksFooter =({ document }) => {
+	const Remarks = get(document, "additionalData.Remarks",undefined);
+	const Remarks1 = Remarks ? Remarks.replace(/\\n/g,'\n') : null;
+	return Remarks ? (
+	<div>
+		<hr align="center" width="100%" color="black" />
+		<div className="row">
+			<div className="col-5">
+				<span style={Arial15pt}>Remarks:</span>
+			</div>
+		</div>
+		<br/>
+		<div className="row">
+			<span style={Arial15ptp}>{Remarks1}</span>
+		</div>
+	</div>
+  ) :null ;
+	
+};
 
-const Template = ({ document }) => (
+export const AwardsFooter =({ document }) => {
 	
+	const Awards = get(document, "additionalData.Awards",undefined);
+	const Awards1 = Awards ? Awards.replace(/\\n/g,'\n') : null;
+	return Awards ? (
+	<div>
+		<br/>
+		<div className="row">
+			<div className="col-5">
+				<span style={Arial15pt}>Awards:</span>
+			</div>
+		</div>
+		<br/>
+		<div className="row">
+			<span style={Arial15ptp}>{Awards1}</span>
+		</div>
+	</div>
+  ) :null ;
 	
-  <div className="container" style={borderImgStyle}>
-    <img
-      src={SUTD_CERT_LOGO}
-      style={logoImgStyle}
-      className="row d-flex justify-content-center"
-    />
-    <div>
-      {" "}
+};
+
+export const ThesisFooter =({ document }) => {
+	
+	const Thesis = get(document, "additionalData.Thesis",undefined);
+	return Thesis ? (
+	<div>
+		<div className="row">
+			<div className="col-12">
+				<span style={Arial15pt}>Thesis Title: {document.additionalData.Thesis}</span>
+			</div>
+		</div>
+	<br/>
+	</div>
+  ) :null ;
+	
+};
+
+export const DegreeFooter =({ document }) => {
+	
+	const Degree = get(document, "additionalData.Degree2",undefined);
+	
+	const Degree1 = get(document, "additionalData.Degree",undefined);
+	const Degree11 = Degree1 ? Degree1.replace(/\\n/g,'\n') : null;
+	
+	const Degree2 = get(document, "additionalData.Degree2",undefined);
+	const Degree22 = Degree2 ? Degree2.replace(/\\n/g,'\n') : null;
+	
+	return Degree ? (
+	<div>
+		<div className="row">
+			<div className="col-5">
+				<span style={Arial15pt}>Conferred the degree(s) of:</span>
+			</div>
+		</div>
+		<br/>
+		<ul>
+			<li><span style={Arial14ptp}>{Degree11}</span></li>
+			<li><span style={Arial14ptp}>{Degree22}</span></li>
+		</ul>
+
+		<div className="row">
+			<div className="col-5">
+				<span style={Arial15pt}>On: {formatDateFullMonthProper(document.issuedOn)}</span>
+			</div>
+		</div>
+		
+	</div>
+  ) :(
+	<div>
+		<div className="row">
+			<div className="col-5">
+				<span style={Arial15pt}>Conferred the degree(s) of:</span>
+			</div>
+		</div>
+		<br/>
+		<ul>
+			<li><span style={Arial14ptp}>{Degree11}</span></li>
+		</ul>
+
+		<div className="row">
+			<div className="col-5">
+				<span style={Arial15pt}>On: {formatDateFullMonthProper(document.issuedOn)}</span>
+			</div>
+		</div>
+		
+	</div>
+  ) ;
+	
+};
+
+export const TXTFooter =({ document }) => {
+	
+	const TXTData = get(document, "additionalData.TxtData",undefined);
+	return TXTData ? (
+	<div>
+		<br/>
+		<div className="row">
+			<div className="col-9">
+				<span style={Arial15pt}>{document.additionalData.TxtData}</span>
+			</div>
+		</div>
+	<br/>
+	</div>
+  ) :null ;
+	
+};
+
+const Transcript = ({ document }) => (
+  <div className="container">
+    <div className="transcript-content">
+      <style>
+        {`
+      .sutd-logo {
+        padding-top:1.2em;
+        float:right;
+        width:20%;
+      }
+	  
+	  .Title2 {
+        padding-top:1em;
+        float:left;
+		font-family: Arial;
+        font-size:1.5em;
+		font-weight:bold
+      }
+      
+      .page-title {
+        font-weight:bold;
+		color:Brown;
+        font-size:1.5em;
+        padding-top:1em;
+      }
+	  
+	  .sutd-seal{
+        width:80%;
+      }
+	  
+	 .page-title2{
+        font-weight:bold;
+		font-color:red;
+        font-size:1em;
+        padding-top:3em;
+        text-align:left;
+      }
+	  
+	  .exam-results-header {
+        border-top: 2px solid #212529;
+        border-bottom: 2px solid #212529;
+        margin-bottom:0.8em;
+        font-weight: bold
+      }
+	  
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+      .semester-header{
+        font-weight: bold;
+        text-transform:uppercase;
+      }
+      .semester-header.exemption {
+        text-transform: none;
+      }
+      .credit-unit {
+        text-align: center
+      }
+	  
+      .grade {
+        text-align: left
+      }
+	  
+      .name {
+        text-align: left
+      }	  
+      .exam-results-footer{
+        font-weight: bold
+      }
+      `}
+      </style>
       <br />
       <br />
-      <div>
-        {" "}
-        <hr align="center" size="5" width="45%" color="black" />{" "}
+      <div className="row">
+        <div className="col-12">
+          <div className="Title2">Office of the Registrar</div>
+          <img
+            src={SUTD_CERT_LOGO}
+            className="sutd-logo"
+            title="Singapore University of Technology and Design"
+          />
+        </div>
       </div>
-      <div className="row justify-content-center" style={{ marginTop: "1rem" }}>
-        <span style={GothamMedium12pt}>
-          Singapore University of Technology and Design
-        </span>
+      <br />
+      <div className="row">
+        <div className="col-5">
+          <span style={GothamMedium12pt}>Academic Transcript</span>
+        </div>
       </div>
-      <div className="row d-flex justify-content-center">
-        <span style={GothamMedium12pt}>
-          upon the recommendation of the Faculty hereby confers on
-        </span>
+      <div className="row">
+        <hr align="center" width="100%" color="brown" />
       </div>
-      <div
-        className="row d-flex justify-content-center align-items-center"
-        style={{ height: "100px", lineHeight: "175%" }}
-      >
-        <span style={GothamMedium265pt}>{document.recipient.name}</span>
-      </div>
-      <div
-        className="row d-flex justify-content-center"
-        style={{ marginBottom: "10px" }}
-      >
-        <span style={GothamMedium12pt}>the degree of</span>
-      </div>
-      <div className="row d-flex justify-content-center align-items-center">
-        <span style={GothamMedium22pt}>{document.name}</span>
-      </div>{" "}
 
+
+      <div className="row">
+        <div className="col-7">
+          <span style={Arial12pt}>{document.recipient.name}</span>
+        </div>
+		<br/>
+		<br/>
+        <div className="col-7">
+          <div className="row">
+            <div className="col-7">
+              <span style={Arial15pt}>SUTD ID :<strong>{document.recipient.studentId}</strong></span>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-7">
+              <span style={Arial15pt}>Date of Birth :{" "}
+              <strong>
+                {formatDateFullMonth(document.recipient.Birthdate)}	
+              </strong></span>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-7">
+              <span style={Arial15pt}>Date of Admission :{" "}
+              <strong>
+                {formatDateFullMonthProper(document.recipient.AdmissionDate)}
+              </strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="col-2" style={{ marginTop: "1rem" }}>
+          {" "}
+          <span style={Arial15pt}>Programme :</span>
+        </div>
+        <div className="col-5" style={{ marginTop: "1rem" }}>
+          {" "}
+          <span style={Arial15pt}><strong>{document.recipient.Programme}</strong></span>
+        </div>
+        <div className="col-3" style={{ marginTop: "1rem" }}>
+          {" "}
+          <span style={Arial15pt}>Status :</span>
+        </div>
+        <div className="col-2" style={{ marginTop: "1rem" }}>
+          {" "}
+          <span style={Arial15pt}><strong>{document.recipient.Status}</strong></span>
+        </div>
+      </div>
+	  
 	  <div>
         <Plan document={document} />
       </div>
 
-      <div className="row d-flex justify-content-center align-items-center">
-        <span style={GothamMedium165pt}>{document.recipient.Honors}</span>
-      </div>
 
-      <div className="row d-flex justify-content-center align-items-center">
-	       <span style={GothamMedium165pt}>{document.recipient.SubPlan}</span>
+      <br />
+
+      <div className="exam-results-header row">
+        <div className="col-4"><span style={Arial15pt}>Subject Code</span></div>
+        <div className="col-5"><span style={Arial15pt}>Subject Title</span></div>
+        <div className="col-1"><span style={Arial15pt}>Level</span></div>
+        <div className="col-1"><span style={Arial15pt}>Credits</span></div>
+        <div className="col-1"><span style={Arial15pt}>Grade</span></div>
       </div>
 
       <div>
-        <SubPlan1 document={document} />
+        <SubjectGrades document={document} />
       </div>
-	
-	
-      <br />
-      <div className="row d-flex justify-content-center">
-        <span style={GothamMedium12pt}>
-          with all its honor, privileges and obligations on
-        </span>
-      </div>
-      <br />
-      <div className="row d-flex justify-content-center">
-        <span style={GothamBold12pt}>
-          {formatDateFullMonthProper(document.issuedOn)}
-        </span>
-      </div>
-    </div>
-    <br />
-    <br />
-    <div className="row">
-      <div className="col-2">&nbsp;</div>
-      <div className="col-6">
-        <div>
-          <img src={document.additionalData.certSignatories[0].signature} style={chairImgStyle} />
-        </div>
-      </div>
-
-      <div className="col-2">
-        <div>
-          <img src={document.additionalData.certSignatories[1].signature}  style={presidentImgStyle} />
-        </div>
-      </div>
-    </div>
-
-    <div className="row">
-      <div style={{ marginRight: "13rem" }}>&nbsp;</div>
-      <div style={{ marginRight: "31rem" }}>
-        <div>
-          <span style={GothamMedium10pt}>{document.additionalData.Signatorytype[0].type} </span>
-        </div>
-      </div>
+	  
+	  <div>
+        <RemarksFooter document={document} />
+      </div>  
 
       <div>
+        <AwardsFooter document={document} />
+      </div>
+
+	  <hr align="center" width="100%" color="black" />
+	  
+      <div>
+        <ThesisFooter document={document} />
+      </div>	
+	  
+      <div>
+        <DegreeFooter document={document} />
+      </div>	
+
+      <div>
+        <TXTFooter document={document} />
+      </div>
+
+	<hr align="center" width="100%" color="black" />
+      <div className="row d-flex justify-content-center">
+        <span style={Arial15pt}>
+          <strong>-END OF RECORD-</strong>
+        </span>
+      </div>
+      <div className="row d-flex justify-content-center">
+        <span style={Arial15pt}>
+          <strong>-No Entries Valid Below This Line-</strong>
+        </span>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <div className="col-5">
         <div>
-          <span style={GothamMedium10pt}>{document.additionalData.Signatorytype[1].type}</span>
+          <img src={SUTD_SEAL} className="sutd-seal" />
+        </div>
+      </div>
+
+      <hr align="center" width="100%" color="Brown" />
+
+      <div className="d-flex justify-content-center">
+        <div>
+          <span style={Arial5pt}>
+            {
+              "An official transcript is printed on watermarked security paper and endorsed with the Registrar's signature in blue. A raised seal is not required."
+            }
+          </span>
+        </div>
+      </div>
+      <div className="d-flex justify-content-center">
+        <div>
+          <span style={Arial5pt}>
+            A black and white transcript is not an original. Transcript guide on
+            back.
+          </span>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <div className="row">
+        <div className="col-5">
+          <div>
+            <img src={document.additionalData.footer[0].footer} />
+          </div>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-5">
+          <div>
+            <img src={document.additionalData.footer[1].footer} />
+          </div>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-5">
+          <div>
+            <img src={document.additionalData.footer[2].footer} />
+          </div>
         </div>
       </div>
     </div>
-    <div className="row">
-      {" "}
-      <div className="col-11">&nbsp;</div>
-      <div className="co1-4">
-        <div>
-          <span style={GothamMedium8pt}>Serial No. {document.recipient.DegID} </span>
-        </div>
-      </div>
-    </div>
-    <br />
-    <br />
   </div>
 );
 
-export default Template;
-Template.propTypes = {
+Transcript.propTypes = {
   document: PropTypes.object.isRequired
 };
+
+export default Transcript;
