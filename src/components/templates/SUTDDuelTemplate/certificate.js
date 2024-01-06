@@ -123,13 +123,22 @@ export const SubPlan1 =({ document }) => {
 
 const Template = ({ document }) => (
 	
-	
   <div className="container" style={borderImgStyle}>
-    <img
-      src={SUTD_CERT_LOGO}
-      style={logoImgStyle}
-      className="row d-flex justify-content-center"
-    />
+      <div className="row">
+      <div className="col-2">&nbsp;</div>
+      <div className="col-6">
+        <div>
+    <img src={SUTD_CERT_LOGO} style={logoImgStyle}/>
+        </div>
+      </div>
+
+      <div className="col-2">
+        <div>
+    <img src={SUTD_CERT_LOGO} style={logoImgStyle}/>
+        </div>
+      </div>
+    </div>
+	
     <div>
       {" "}
       <br />
