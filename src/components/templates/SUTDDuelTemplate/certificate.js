@@ -85,6 +85,21 @@ const logoImgStyle = {
   marginTop: "5%"
 };
 
+const DuellogoImgStyle1 = {
+  width: "150px",
+  height: "60px",
+  marginLeft: "23%",
+  marginTop: "5%"
+};
+
+const DuellogoImgStyle2 = {
+  width: "150px",
+  height: "60px",
+  marginLeft: "83%",
+  marginTop: "5%"
+};
+
+
 const chairImgStyle = {
   width: "150px",
   height: "60px",
@@ -128,13 +143,13 @@ const Template = ({ document }) => (
       <div className="col-2">&nbsp;</div>
       <div className="col-6">
         <div>
-    <img src={SUTD_CERT_LOGO} style={logoImgStyle}/>
+    <img src={SUTD_CERT_LOGO} style={DuellogoImgStyle1}/>
         </div>
       </div>
 
       <div className="col-2">
         <div>
-    <img src={SUTD_CERT_LOGO} style={logoImgStyle}/>
+    <img src={SUTD_CERT_LOGO} style={DuellogoImgStyle2}/>
         </div>
       </div>
     </div>
