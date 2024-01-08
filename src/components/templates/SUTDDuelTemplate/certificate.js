@@ -7,7 +7,8 @@ import {
   SUTD_CERT_BG,
   SUTD_CERT_LOGO,
   SUTD_CHAIR,
-  SUTD_PRESIDENT
+  SUTD_PRESIDENT,
+  NUS_CERT_LOGO
 } from "./images";
 
 export const TIMEZONE = "Asia/Singapore";
@@ -149,7 +150,7 @@ const Template = ({ document }) => (
 
       <div className="col-6">
         <div>
-    <img src={SUTD_CERT_LOGO} style={DuellogoImgStyle2}/>
+    <img src={NUS_CERT_LOGO} style={DuellogoImgStyle2}/>
         </div>
       </div>
     </div>
