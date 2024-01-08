@@ -141,13 +141,13 @@ const Template = ({ document }) => (
   <div className="container" style={borderImgStyle}>
       <div className="row">
       <div className="col-2">&nbsp;</div>
-      <div className="col-6">
+      <div className="col-4">
         <div>
     <img src={SUTD_CERT_LOGO} style={DuellogoImgStyle1}/>
         </div>
       </div>
 
-      <div className="col-2">
+      <div className="col-4">
         <div>
     <img src={SUTD_CERT_LOGO} style={DuellogoImgStyle2}/>
         </div>
