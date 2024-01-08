@@ -88,14 +88,14 @@ const logoImgStyle = {
 const DuellogoImgStyle1 = {
   width: "150px",
   height: "60px",
-  marginLeft: "23%",
+  marginLeft: "43%",
   marginTop: "5%"
 };
 
 const DuellogoImgStyle2 = {
   width: "150px",
   height: "60px",
-  marginLeft: "83%",
+  marginLeft: "43%",
   marginTop: "5%"
 };
 
@@ -140,14 +140,14 @@ const Template = ({ document }) => (
 	
   <div className="container" style={borderImgStyle}>
       <div className="row">
-      <div className="col-2">&nbsp;</div>
-      <div className="col-4">
+
+      <div className="col-6">
         <div>
     <img src={SUTD_CERT_LOGO} style={DuellogoImgStyle1}/>
         </div>
       </div>
 
-      <div className="col-4">
+      <div className="col-6">
         <div>
     <img src={SUTD_CERT_LOGO} style={DuellogoImgStyle2}/>
         </div>
