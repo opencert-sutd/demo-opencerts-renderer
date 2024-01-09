@@ -170,7 +170,7 @@ const Template = ({ document }) => (
       </div>
       <div className="row d-flex justify-content-center">
         <span style={GothamMedium12pt}>
-          upon the recommendation of the Faculty hereby confers on
+          and the National University of Singapore hereby jontly confer on
         </span>
       </div>
       <div
@@ -251,6 +251,22 @@ const Template = ({ document }) => (
       </div>
     </div>
 
+    <div className="row">
+      <div style={{ marginRight: "13rem" }}>&nbsp;</div>
+      <div style={{ marginRight: "31rem" }}>
+        <div>
+          <span style={GothamMedium10pt}>Singapore University of Technology and Design</span>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <span style={GothamMedium10pt}>National University of Singapore</span>
+        </div>
+      </div>
+    </div>
+	      
+
    <div className="row">
       <div className="col-2">&nbsp;</div>
       <div className="col-6">
@@ -281,7 +297,20 @@ const Template = ({ document }) => (
       </div>
     </div>	
 	
+ <div className="row">
+      <div style={{ marginRight: "13rem" }}>&nbsp;</div>
+      <div style={{ marginRight: "31rem" }}>
+        <div>
+          <span style={GothamMedium10pt}>Singapore University of Technology and Design</span>
+        </div>
+      </div>
 
+      <div>
+        <div>
+          <span style={GothamMedium10pt}>National University of Singapore</span>
+        </div>
+      </div>
+    </div>
 
 	      
     <div className="row">
