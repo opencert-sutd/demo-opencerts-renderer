@@ -251,7 +251,7 @@ const Template = ({ document }) => (
       </div>
     </div>
 
-    <div className="row">
+    <div className="row" style={{ marginTop: "0.75rem" }}>
       <div style={{ marginRight: "12.5rem" }}>&nbsp;</div>
       <div style={{ marginRight: "23.5rem" }}>
         <div>
@@ -297,7 +297,7 @@ const Template = ({ document }) => (
       </div>
     </div>	
 	
- <div className="row">
+ <div className="row" style={{ marginTop: "0.75rem" }}>
       <div style={{ marginRight: "12.5rem" }}>&nbsp;</div>
       <div style={{ marginRight: "23rem" }}>
         <div>
