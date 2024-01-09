@@ -237,8 +237,8 @@ const Template = ({ document }) => (
     </div>
 
     <div className="row">
-      <div style={{ marginRight: "13rem" }}>&nbsp;</div>
-      <div style={{ marginRight: "31rem" }}>
+      <div style={{ marginRight: "12.5rem" }}>&nbsp;</div>
+      <div style={{ marginRight: "29rem" }}>
         <div>
           <span style={GothamMedium10pt}>{document.additionalData.Signatorytype[0].type} </span>
         </div>
@@ -252,8 +252,8 @@ const Template = ({ document }) => (
     </div>
 
     <div className="row">
-      <div style={{ marginRight: "13rem" }}>&nbsp;</div>
-      <div style={{ marginRight: "31rem" }}>
+      <div style={{ marginRight: "12.5rem" }}>&nbsp;</div>
+      <div style={{ marginRight: "23rem" }}>
         <div>
           <span style={GothamMedium10pt}>Singapore University of Technology and Design</span>
         </div>
@@ -283,8 +283,8 @@ const Template = ({ document }) => (
     </div>
 
     <div className="row">
-      <div style={{ marginRight: "13rem" }}>&nbsp;</div>
-      <div style={{ marginRight: "31rem" }}>
+      <div style={{ marginRight: "12.5rem" }}>&nbsp;</div>
+      <div style={{ marginRight: "29rem" }}>
         <div>
           <span style={GothamMedium10pt}>{document.additionalData.Signatorytype[2].type} </span>
         </div>
@@ -298,8 +298,8 @@ const Template = ({ document }) => (
     </div>	
 	
  <div className="row">
-      <div style={{ marginRight: "13rem" }}>&nbsp;</div>
-      <div style={{ marginRight: "31rem" }}>
+      <div style={{ marginRight: "12.5rem" }}>&nbsp;</div>
+      <div style={{ marginRight: "23rem" }}>
         <div>
           <span style={GothamMedium10pt}>Singapore University of Technology and Design</span>
         </div>
