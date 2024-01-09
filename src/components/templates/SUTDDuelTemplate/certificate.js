@@ -238,7 +238,7 @@ const Template = ({ document }) => (
 
     <div className="row">
       <div style={{ marginRight: "12.5rem" }}>&nbsp;</div>
-      <div style={{ marginRight: "29rem" }}>
+      <div style={{ marginRight: "29.5rem" }}>
         <div>
           <span style={GothamMedium10pt}>{document.additionalData.Signatorytype[0].type} </span>
         </div>
@@ -253,7 +253,7 @@ const Template = ({ document }) => (
 
     <div className="row">
       <div style={{ marginRight: "12.5rem" }}>&nbsp;</div>
-      <div style={{ marginRight: "23rem" }}>
+      <div style={{ marginRight: "23.5rem" }}>
         <div>
           <span style={GothamMedium10pt}>Singapore University of Technology and Design</span>
         </div>
