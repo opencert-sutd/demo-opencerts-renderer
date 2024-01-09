@@ -89,14 +89,14 @@ const logoImgStyle = {
 const DuellogoImgStyle1 = {
   width: "150px",
   height: "60px",
-  marginLeft: "43%",
-  marginTop: "5%"
+  marginLeft: "26%",
+  marginTop: "11%"
 };
 
 const DuellogoImgStyle2 = {
   width: "150px",
-  height: "60px",
-  marginLeft: "43%",
+  height: "120px",
+  marginLeft: "51%",
   marginTop: "5%"
 };
 
@@ -163,7 +163,7 @@ const Template = ({ document }) => (
         {" "}
 
       </div>
-      <div className="row justify-content-center" style={{ marginTop: "1rem" }}>
+      <div className="row justify-content-center" style={{ marginTop: "0rem" }}>
         <span style={GothamMedium12pt}>
           Singapore University of Technology and Design
         </span>
