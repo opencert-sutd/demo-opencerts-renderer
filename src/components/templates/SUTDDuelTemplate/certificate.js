@@ -161,7 +161,7 @@ const Template = ({ document }) => (
       <br />
       <div>
         {" "}
-        <hr align="center" size="5" width="45%" color="black" />{" "}
+
       </div>
       <div className="row justify-content-center" style={{ marginTop: "1rem" }}>
         <span style={GothamMedium12pt}>
@@ -298,7 +298,7 @@ const Template = ({ document }) => (
     </div>	
 	
  <div className="row">
-
+      <div style={{ marginRight: "13rem" }}>&nbsp;</div>
       <div style={{ marginRight: "31rem" }}>
         <div>
           <span style={GothamMedium10pt}>Singapore University of Technology and Design</span>
