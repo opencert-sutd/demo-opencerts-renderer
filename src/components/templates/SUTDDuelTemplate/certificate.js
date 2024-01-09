@@ -265,7 +265,7 @@ const Template = ({ document }) => (
         </div>
       </div>
     </div>
-	      {" "}      
+<br />     
 
    <div className="row">
       <div className="col-2">&nbsp;</div>
