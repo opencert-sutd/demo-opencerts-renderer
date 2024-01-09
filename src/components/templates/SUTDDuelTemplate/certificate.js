@@ -298,7 +298,7 @@ const Template = ({ document }) => (
     </div>	
 	
  <div className="row">
-      <div style={{ marginRight: "13rem" }}>&nbsp;</div>
+
       <div style={{ marginRight: "31rem" }}>
         <div>
           <span style={GothamMedium10pt}>Singapore University of Technology and Design</span>
