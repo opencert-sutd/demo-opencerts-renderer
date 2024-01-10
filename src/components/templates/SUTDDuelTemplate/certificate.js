@@ -299,7 +299,7 @@ const Template = ({ document }) => (
 	
  <div className="row" style={{ marginTop: "-0.75rem" }}>
       <div style={{ marginRight: "12.5rem" }}>&nbsp;</div>
-      <div style={{ marginRight: "23rem" }}>
+      <div style={{ marginRight: "23.5rem" }}>
         <div>
           <span style={GothamMedium10pt}>Singapore University of Technology and Design</span>
         </div>
