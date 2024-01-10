@@ -124,23 +124,21 @@ export const SubjectGrades = ({ document }) => {
   const subjects = semesters.map((s, j) => {
     const semesterSubjects = s.grades.map((t, i) => (
       <div className="row" key={i}>
-       <div className="col-1">
+       <div>
           <span style={Arial15pt}>{t.courseCode}</span>
         </div>
-	
-<div className="col-1">&nbsp;</div>
-        <div className="col-auto">
+
+        <div>
 
           <span style={Arial15pt}>{t.name}</span>
         </div>
-		<div className="col">&nbsp;</div>
-        <div className="col-1 credit-unit">
+        <div>
           <span style={Arial15pt}>{t.courseLevel}</span>
         </div>
-        <div className="col-1 credit-unit">
+        <div>
           <span style={Arial15pt}>{t.courseCredit}</span>
         </div>
-        <div className="col-1 grade">
+        <div>
           <span style={Arial15pt}>{t.grade}</span>
         </div>
       </div>
