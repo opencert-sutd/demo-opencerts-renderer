@@ -231,7 +231,7 @@ const Template = ({ document }) => (
 
       <div className="col-2">
         <div>
-          <img src={document.additionalData.certSignatories[1].signature}  style={presidentImgStyle} />
+           <img src={document.additionalData.certSignatories[2].signature} style={chairImgStyle} />
         </div>
       </div>
     </div>
@@ -246,7 +246,7 @@ const Template = ({ document }) => (
 
       <div>
         <div>
-          <span style={GothamMedium10pt}>{document.additionalData.Signatorytype[1].type}</span>
+          <span style={GothamMedium10pt}>{document.additionalData.Signatorytype[2].type} </span>
         </div>
       </div>
     </div>
@@ -271,7 +271,7 @@ const Template = ({ document }) => (
       <div className="col-2">&nbsp;</div>
       <div className="col-6">
         <div>
-          <img src={document.additionalData.certSignatories[2].signature} style={chairImgStyle} />
+          <img src={document.additionalData.certSignatories[1].signature}  style={presidentImgStyle} />
         </div>
       </div>
 
@@ -286,7 +286,7 @@ const Template = ({ document }) => (
       <div style={{ marginRight: "12.5rem" }}>&nbsp;</div>
       <div style={{ marginRight: "29rem" }}>
         <div>
-          <span style={GothamMedium10pt}>{document.additionalData.Signatorytype[2].type} </span>
+          <span style={GothamMedium10pt}>{document.additionalData.Signatorytype[1].type}</span>
         </div>
       </div>
 
