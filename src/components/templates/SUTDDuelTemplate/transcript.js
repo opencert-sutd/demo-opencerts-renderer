@@ -127,7 +127,7 @@ export const SubjectGrades = ({ document }) => {
        <div className="col-1">
           <span style={Arial15pt}>{t.courseCode}</span>
         </div>
-	<div className="col-1">&nbsp;</div>
+	
 
         <div className="col-auto">
 
