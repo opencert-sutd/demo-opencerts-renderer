@@ -124,7 +124,7 @@ export const SubjectGrades = ({ document }) => {
   const subjects = semesters.map((s, j) => {
     const semesterSubjects = s.grades.map((t, i) => (
       <div className="row" key={i}>
-       <div>
+       <div className="col-1>
           <span style={Arial15pt}>{t.courseCode}</span>
         </div>
 
