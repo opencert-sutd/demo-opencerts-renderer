@@ -132,7 +132,7 @@ export const SubjectGrades = ({ document }) => {
       <div className="row" key={i}>
 	    <div>{repeat(' ')}</div>
        <div>
-          <span style={Arial15pt}>{t.courseCode}</span>
+          <span style={Arial15pt}>{repeat(t.courseCode)}</span>
         </div>
 	
 
