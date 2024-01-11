@@ -130,7 +130,7 @@ export const SubjectGrades = ({ document }) => {
     const semesterSubjects = s.grades.map((t, i) => (
 	  
       <div className="row" key={i}>
-	    <div>{repeat(&nbsp;)}</div>
+	    <div>{repeat('   ')}</div>
        <div>
           <span style={Arial15pt}>{repeat(t.courseCode)}</span>
         </div>
