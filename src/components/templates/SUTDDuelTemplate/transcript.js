@@ -120,10 +120,10 @@ export const SubjectGrades = ({ document }) => {
       <div className="semester-header exemption col-12"><span style={Arial15pt}>{s.semester}</span></div>
     </div>
   );
-
+ const space = ' ';
   const subjects = semesters.map((s, j) => {
     const semesterSubjects = s.grades.map((t, i) => (
-	    &nbsp;.repeat(4);
+	    space.repeat(4);
       <div className="row" key={i}>
 	    <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
        <div>
