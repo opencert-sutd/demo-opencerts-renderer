@@ -123,6 +123,7 @@ export const SubjectGrades = ({ document }) => {
 
   const subjects = semesters.map((s, j) => {
     const semesterSubjects = s.grades.map((t, i) => (
+	    &nbsp;.repeat(4);
       <div className="row" key={i}>
 	    <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
        <div>
