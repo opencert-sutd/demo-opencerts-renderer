@@ -20,6 +20,14 @@ export const formatDateFullMonthProper = dateString => {
   return tz(date, TIMEZONE).format("D MMMM YYYY");
 };
 
+export const repeat = {
+	var repeatedString = "";
+  while (times > 0) {
+    repeatedString += string;
+    times--;
+  }
+  return repeatedString;
+}
 //Added By Suresh For DOB field in Cert On Jan 2021 Begin
 export const formatDateFullMonth = dateString => {
   if (!dateString) return null;
