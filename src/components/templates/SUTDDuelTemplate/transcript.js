@@ -20,11 +20,6 @@ export const formatDateFullMonthProper = dateString => {
   return tz(date, TIMEZONE).format("D MMMM YYYY");
 };
 
-export const repeat =string=> {
-	
-    return string.repeat(4);
-
-}
 //Added By Suresh For DOB field in Cert On Jan 2021 Begin
 export const formatDateFullMonth = dateString => {
   if (!dateString) return null;
@@ -125,28 +120,27 @@ export const SubjectGrades = ({ document }) => {
       <div className="semester-header exemption col-12"><span style={Arial15pt}>{s.semester}</span></div>
     </div>
   );
- const space = ' ';
+
   const subjects = semesters.map((s, j) => {
     const semesterSubjects = s.grades.map((t, i) => (
-	  
       <div className="row" key={i}>
-	    <div>{repeat('   ')}</div>
-       <div>
-          <span style={Arial15pt}>{repeat(t.courseCode)}</span>
+       <div className="col-1">
+          <span style={Arial15pt}>{t.courseCode}</span>
         </div>
-	
+	<div className="col-1">&nbsp;</div>
 
-        <div>
+        <div className="col-auto">
 
           <span style={Arial15pt}>{t.name}</span>
         </div>
-        <div>
+		<div className="col">&nbsp;</div>
+        <div className="col-1 credit-unit">
           <span style={Arial15pt}>{t.courseLevel}</span>
         </div>
-        <div>
+        <div className="col-1 credit-unit">
           <span style={Arial15pt}>{t.courseCredit}</span>
         </div>
-        <div>
+        <div className="col-1 grade">
           <span style={Arial15pt}>{t.grade}</span>
         </div>
       </div>
