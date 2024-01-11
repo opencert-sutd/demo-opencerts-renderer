@@ -20,13 +20,10 @@ export const formatDateFullMonthProper = dateString => {
   return tz(date, TIMEZONE).format("D MMMM YYYY");
 };
 
-export const repeat = {
-	var repeatedString = "";
-  while (times > 0) {
-    repeatedString += string;
-    times--;
-  }
-  return repeatedString;
+export const repeat =string=> {
+	
+    return string.repeat(4);
+
 }
 //Added By Suresh For DOB field in Cert On Jan 2021 Begin
 export const formatDateFullMonth = dateString => {
@@ -131,9 +128,9 @@ export const SubjectGrades = ({ document }) => {
  const space = ' ';
   const subjects = semesters.map((s, j) => {
     const semesterSubjects = s.grades.map((t, i) => (
-	    {space}.repeat(4)
+	  
       <div className="row" key={i}>
-	    <div></div>
+	    <div>{repeat(' ')}</div>
        <div>
           <span style={Arial15pt}>{t.courseCode}</span>
         </div>
