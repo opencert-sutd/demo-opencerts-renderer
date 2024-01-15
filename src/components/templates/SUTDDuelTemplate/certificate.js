@@ -94,9 +94,9 @@ const DuellogoImgStyle1 = {
 };
 
 const DuellogoImgStyle2 = {
-  width: "150px",
-  height: "120px",
-  marginLeft: "51%",
+  width: "163px",
+  height: "146px",
+  marginLeft: "50%",
   marginTop: "5%"
 };
 
