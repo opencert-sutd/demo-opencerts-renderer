@@ -170,7 +170,7 @@ const Template = ({ document }) => (
       </div>
       <div className="row d-flex justify-content-center">
         <span style={GothamMedium12pt}>
-          and the National University of Singapore hereby jontly confer on
+          and the National University of Singapore hereby jointly confer on
         </span>
       </div>
       <div
@@ -209,7 +209,7 @@ const Template = ({ document }) => (
       <br />
       <div className="row d-flex justify-content-center">
         <span style={GothamMedium12pt}>
-          with all its honor, privileges and obligations on
+          with all its honour, privileges and obligations on
         </span>
       </div>
       <br />
