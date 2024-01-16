@@ -50,7 +50,7 @@ const GothamMedium12pt = {
 
 const GothamBold12pt = {
   fontFamily: "Gotham Medium",
-  fontStyle: "Bold",
+  fontWeight: "Bold",
   fontSize: "12px",
   textAlign: "center",
   color: "black"
