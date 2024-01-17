@@ -165,7 +165,7 @@ const Template = ({ document }) => (
       </div>
       <div className="row justify-content-center" style={{ marginTop: "0rem" }}>
         <span style={GothamMedium12pt}>
-          Singapore University of Technology and Design
+          The Singapore University of Technology and Design
         </span>
       </div>
       <div className="row d-flex justify-content-center">
